@@ -110,10 +110,10 @@ void deleteTextArr(std::string* stringArr, const int numbersAdress) //удали
 
 int main()
 {
-    setlocale(LC_ALL, "Russian"); //Корректное отображение Кириллицы
+    setlocale(LC_ALL, "Russian"); 
     system("chcp 1251");
-    SetConsoleCP(1251); //перевод на русский
-    SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251); //попытка в кирилицу(половинный успех)
 
     cout << "start\n";
 
