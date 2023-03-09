@@ -87,38 +87,36 @@ int main()
     if (fileIn.is_open())
     {
         std::cout << "File in.txt is open." << std::endl;
+        fileIn >> numbersAdress;
+        string* arrAdress = createDinamicStringArr(numbersAdress);
+
+        for (int i = 0; i < numbersAdress; i++)
+        {
+            fileIn >> city_m >> street_m >> home_m >> room_m;
+            Adresa adress(city_m, street_m, home_m, room_m);
+            arrAdress[i] = adress.fullAddress();
+        }
+
+        fileIn.close(); //закрыт
+
+        fullAddressPrint(arrAdress, numbersAdress); //печать
+
+        deleteTextArr(arrAdress, numbersAdress);//память очищена
+
+        if (!fileIn.is_open()) //на всякий случай
+        {
+            cout << "End\n";
+            return 0;
+        }
+        else
+        {
+            cout << "Файл open.txt не закрылся!\n";
+            return 0;
+        }
     }
     else
     {
         std::cout << "Eror! File in.txt is not open!" << std::endl;
-        return 0;
-    }
-
-
-    fileIn >> numbersAdress;
-    string* arrAdress = createDinamicStringArr(numbersAdress);
-
-    for (int i = 0; i < numbersAdress; i++)
-    {
-        fileIn >> city_m >> street_m >> home_m >> room_m;
-        Adresa adress(city_m, street_m, home_m, room_m);
-        arrAdress[i] = adress.fullAddress();
-    }
-
-    fileIn.close(); //закрыт
-
-    fullAddressPrint(arrAdress, numbersAdress); //печать
-
-    deleteTextArr(arrAdress, numbersAdress);//память очищена
-
-    if (!fileIn.is_open()) //на всякий случай
-    {
-        cout << "End\n";
-        return 0;
-    }
-    else
-    {
-        cout << "Файл open.txt не закрылся!\n";
         return 0;
     }
 }
