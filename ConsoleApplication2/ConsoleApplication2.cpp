@@ -22,46 +22,6 @@ public:
         home = home_;
         room = room_;
     }
-    void SetCity(string valueCity)
-    {
-        city = valueCity;
-    }
-    string GetCity()
-    {
-        return city;
-    }
-    void SetStreet(string valueStreet)
-    {
-        street = valueStreet;
-    }
-    string GetStreet()
-    {
-        return street;
-    }
-    void SetHome(int valueHome)
-    {
-        home = valueHome;
-    }
-    int GetHome()
-    {
-        return home;
-    }
-    void SetRoom(int valueRoom)
-    {
-        room = valueRoom;
-    }
-    int GetRoom()
-    {
-        return room;
-    }
-    string SetSum(int valueFull)
-    {
-        full = valueFull;
-    }
-    string GetFull()
-    {
-        return full;
-    }
     string fullAddress();
 };
 
