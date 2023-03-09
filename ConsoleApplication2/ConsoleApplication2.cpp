@@ -72,6 +72,17 @@ string Adresa::fullAddress() //полный адресс в строку
     return full;
 }
 
+std::string* createDinamicStringArr(const int numbersAdress)// функклия для динамического массива
+{
+    std::string* stringArr = new std::string[numbersAdress]
+    {
+    };
+    return stringArr;
+}
+void deleteTextArr(std::string* stringArr, const int numbersAdress) //удалить массив чтоб не забивать память
+{
+    delete[] stringArr;
+}
 
 int fullAddressPrint(string* arrAdress,const int numbersAdress) //ФУНКЦИЯ (НЕ МЕТОД) печать в файл
 {
@@ -96,17 +107,6 @@ int fullAddressPrint(string* arrAdress,const int numbersAdress) //ФУНКЦИЯ
     }
 }
 
-std::string* createDinamicStringArr(const int numbersAdress)// функклия для динамического массива
-{
-    std::string* stringArr = new std::string[numbersAdress]
-    {
-    };
-    return stringArr;
-}
-void deleteTextArr(std::string* stringArr, const int numbersAdress) //удалить массив чтоб не забивать память
-{
-    delete[] stringArr;
-}
 
 int main()
 {
